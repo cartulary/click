@@ -2,6 +2,7 @@
 #import <ApplicationServices/ApplicationServices.h>
 
 int main(int argc, char *argv[]) {
+    [[NSAutoreleasePool alloc] init];
     NSUserDefaults *args = [NSUserDefaults standardUserDefaults];
 
     int x = [args integerForKey:@"x"];
