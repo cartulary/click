@@ -20,10 +20,14 @@ int main(int argc, char *argv[]) {
     while (c-->0) {
         CGEventSetType(mouseEvent, kCGEventLeftMouseDown);
         CGEventPost(kCGHIDEventTap, mouseEvent);
-        usleep(D);
+        if (D) {
+          usleep(D);
+        }
         CGEventSetType(mouseEvent, kCGEventLeftMouseUp);
         CGEventPost(kCGHIDEventTap, mouseEvent);
-        usleep(d);
+        if (d) {
+          usleep(d);
+        }
     }
     CFRelease(mouseEvent);
     return 0;
