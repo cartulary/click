@@ -10,8 +10,12 @@ int main(int argc, char *argv[]) {
     int c = [args integerForKey:@"c"]; // count
     int d = [args integerForKey:@"d"]; // delay
     int D = [args integerForKey:@"D"]; // inner delay
+    BOOL n = [args boolForKey:@"n"]; // don't actually click
 
     printf("%lf seconds\n", (c * ((double)d + (double)D)) / 1000000.0);
+    if (n) {
+	    return 0;
+    }
 
     CGPoint pt = CGPointMake(x, y);
 
